@@ -1,0 +1,15 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:library": "yarn workspace library build",
+    "start:website": "yarn workspace website start",
+    "storybook": "yarn workspace library storybook"
+  }
+}
