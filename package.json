@@ -4,6 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
+  "resolutions": {
+    "react-test-renderer": "18.1.0"
+  },
   "workspaces": [
     "packages/*"
   ],
