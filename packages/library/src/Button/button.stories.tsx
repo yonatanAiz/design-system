@@ -36,3 +36,26 @@ export const TextDanger = () => (
 );
 
 export const WithIcon = () => <Button icon={<span>👍</span>}>Button</Button>;
+
+export const SnapTest = () => (
+  <div>
+    <Button>Button</Button>
+    <Button color="secondary">Button</Button>
+    <Button color="danger">Button</Button>
+    <Button variant="outlined">Button</Button>
+    <Button variant="outlined" color="secondary">
+      Button
+    </Button>
+    <Button variant="outlined" color="danger">
+      Button
+    </Button>
+    <Button variant="text">Button</Button>
+    <Button variant="text" color="secondary">
+      Button
+    </Button>
+    <Button variant="text" color="danger">
+      Button
+    </Button>
+    <Button icon={<span>👍</span>}>Button</Button>
+  </div>
+);
