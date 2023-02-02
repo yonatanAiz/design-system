@@ -21,12 +21,8 @@ const Button = ({
   return (
     <button
       {...props}
-      className={classnames(
-        styles.button,
-        className,
-        styles[color],
-        styles[variant],
-      )}
+      type={type}
+      className={classnames(className, styles[color], styles[variant])}
     >
       {icon}
       {children}

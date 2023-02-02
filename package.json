@@ -9,9 +9,9 @@
   },
   "lint-staged": {
     "packages/library/**/*.{ts,tsx,css}": [
-      "yarn workspace library test",
-      "yarn workspace library lint:fix",
-      "yarn workspace library prettier:write"
+      "yarn workspace library jest --bail --findRelatedTests",
+      "eslint --ext .js,.jsx,.ts,.tsx . --fix",
+      "yarn workspace library prettier --write ."
     ]
   },
   "workspaces": [
