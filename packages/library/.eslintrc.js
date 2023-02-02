@@ -23,6 +23,8 @@ module.exports = {
     'coverage',
     'webpack.config.js',
     'jest.config.js',
+    'jest.storyshots.config.js',
+    "storybook-static",
   ],
   plugins: ['react', '@typescript-eslint'],
   rules: {},

@@ -9,7 +9,6 @@
   },
   "lint-staged": {
     "*.{ts,tsx,css}": [
-      "yarn workspace library test:staged",
       "yarn workspace library lint:fix",
       "yarn workspace library prettier:write"
     ]

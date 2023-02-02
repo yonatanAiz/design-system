@@ -11,15 +11,17 @@
   "scripts": {
     "build": "webpack --mode production",
     "storybook": "start-storybook -p 6006",
+    "start:build": "start-storybook -p 6006 -s ./storybook-static",
     "build-storybook": "build-storybook",
-    "test": "jest",
+    "test": "jest --ignore storybook.spec.ts",
     "test:watch": "jest --watch",
     "test:staged": "jest --bail --findRelatedTests",
-    "test:storyshots": "jest --testPathPattern storybook.spec.ts",
+    "test:storyshots": "jest --config jest.storyshots.config.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
     "prettier:write": "prettier --write .",
-    "prettier:check": "prettier --check ."
+    "prettier:check": "prettier --check .",
+    "storyshoots":"yarn build-storybook && start-server-and-test start:build http://localhost:6006 test:storyshots"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -49,6 +51,7 @@
     "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "start-server-and-test": "^1.15.3",
     "style-loader": "^3.3.1",
     "ts-jest": "^29.0.5",
     "ts-loader": "^9.4.2",
