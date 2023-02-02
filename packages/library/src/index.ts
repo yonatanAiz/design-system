@@ -1,2 +1,2 @@
-export * from "./Button";
-export * from "./style/index.css";
+export * from './Button';
+export * from './style/index.css';

@@ -1,7 +1,7 @@
-import "../src/style/index.css";
+import '../src/style/index.css';
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,

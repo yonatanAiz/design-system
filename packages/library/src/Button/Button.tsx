@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './button.module.css';
 import classnames from 'classnames';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: 'primary' | 'secondary' | 'danger';
   icon?: React.ReactNode;
   variant?: 'contained' | 'outlined' | 'text';
@@ -20,6 +21,7 @@ const Button = ({
   return (
     <button
       {...props}
+      type={type}
       className={classnames(
         styles.button,
         className,

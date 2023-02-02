@@ -2,7 +2,6 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import Button, { ButtonProps } from './Button';
 
-
 const TEXT_CONTENT = 'Click me';
 
 const renderButton = (props?: ButtonProps) =>

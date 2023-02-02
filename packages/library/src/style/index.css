@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@300;400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@300;400;500&display=swap');
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -122,7 +122,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: "";
+  content: '';
   content: none;
 }
 table {
@@ -234,8 +234,8 @@ h6 {
   --gray-900: #212121;
 
   /* Typography - heebo and roboto */
-  --font-family-1: "Roboto", sans-serif;
-  --font-family-2: "Heebo", sans-serif;
+  --font-family-1: 'Roboto', sans-serif;
+  --font-family-2: 'Heebo', sans-serif;
 
   /* Font sizes */
   --font-size-heading1: 9.6rem;
