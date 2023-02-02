@@ -21,7 +21,8 @@
     "build:library": "yarn workspace library build",
     "start:website": "yarn workspace website start",
     "storybook": "yarn workspace library storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "lint-staged"
   },
   "devDependencies": {
     "husky": "^8.0.3",
