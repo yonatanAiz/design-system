@@ -3783,6 +3783,22 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
+"@typescript-eslint/eslint-plugin@^5.50.0":
+  version "5.50.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.50.0.tgz#fb48c31cadc853ffc1dc35373f56b5e2a8908fe9"
+  integrity sha1-+0jDHK3IU//B3DU3P1a14qiQj+k=
+  dependencies:
+    "@typescript-eslint/scope-manager" "5.50.0"
+    "@typescript-eslint/type-utils" "5.50.0"
+    "@typescript-eslint/utils" "5.50.0"
+    debug "^4.3.4"
+    grapheme-splitter "^1.0.4"
+    ignore "^5.2.0"
+    natural-compare-lite "^1.4.0"
+    regexpp "^3.2.0"
+    semver "^7.3.7"
+    tsutils "^3.21.0"
+
 "@typescript-eslint/experimental-utils@^5.0.0":
   version "5.49.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/experimental-utils/-/experimental-utils-5.49.0.tgz"
@@ -3800,6 +3816,16 @@
     "@typescript-eslint/typescript-estree" "5.49.0"
     debug "^4.3.4"
 
+"@typescript-eslint/parser@^5.50.0":
+  version "5.50.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/parser/-/parser-5.50.0.tgz#a33f44b2cc83d1b7176ec854fbecd55605b0b032"
+  integrity sha1-oz9EssyD0bcXbshU++zVVgWwsDI=
+  dependencies:
+    "@typescript-eslint/scope-manager" "5.50.0"
+    "@typescript-eslint/types" "5.50.0"
+    "@typescript-eslint/typescript-estree" "5.50.0"
+    debug "^4.3.4"
+
 "@typescript-eslint/scope-manager@5.49.0":
   version "5.49.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/scope-manager/-/scope-manager-5.49.0.tgz"
@@ -3807,6 +3833,14 @@
   dependencies:
     "@typescript-eslint/types" "5.49.0"
     "@typescript-eslint/visitor-keys" "5.49.0"
+
+"@typescript-eslint/scope-manager@5.50.0":
+  version "5.50.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/scope-manager/-/scope-manager-5.50.0.tgz#90b8a3b337ad2c52bbfe4eac38f9164614e40584"
+  integrity sha1-kLijszetLFK7/k6sOPkWRhTkBYQ=
+  dependencies:
+    "@typescript-eslint/types" "5.50.0"
+    "@typescript-eslint/visitor-keys" "5.50.0"
 
 "@typescript-eslint/type-utils@5.49.0":
   version "5.49.0"
@@ -3818,10 +3852,25 @@
     debug "^4.3.4"
     tsutils "^3.21.0"
 
+"@typescript-eslint/type-utils@5.50.0":
+  version "5.50.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/type-utils/-/type-utils-5.50.0.tgz#509d5cc9728d520008f7157b116a42c5460e7341"
+  integrity sha1-UJ1cyXKNUgAI9xV7EWpCxUYOc0E=
+  dependencies:
+    "@typescript-eslint/typescript-estree" "5.50.0"
+    "@typescript-eslint/utils" "5.50.0"
+    debug "^4.3.4"
+    tsutils "^3.21.0"
+
 "@typescript-eslint/types@5.49.0":
   version "5.49.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/types/-/types-5.49.0.tgz"
   integrity sha1-rWZ2bLNsocify2rIuH7C5trENcM=
+
+"@typescript-eslint/types@5.50.0":
+  version "5.50.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/types/-/types-5.50.0.tgz#c461d3671a6bec6c2f41f38ed60bd87aa8a30093"
+  integrity sha1-xGHTZxpr7GwvQfOO1gvYeqijAJM=
 
 "@typescript-eslint/typescript-estree@5.49.0":
   version "5.49.0"
@@ -3830,6 +3879,19 @@
   dependencies:
     "@typescript-eslint/types" "5.49.0"
     "@typescript-eslint/visitor-keys" "5.49.0"
+    debug "^4.3.4"
+    globby "^11.1.0"
+    is-glob "^4.0.3"
+    semver "^7.3.7"
+    tsutils "^3.21.0"
+
+"@typescript-eslint/typescript-estree@5.50.0":
+  version "5.50.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/typescript-estree/-/typescript-estree-5.50.0.tgz#0b9b82975bdfa40db9a81fdabc7f93396867ea97"
+  integrity sha1-C5uCl1vfpA25qB/avH+TOWhn6pc=
+  dependencies:
+    "@typescript-eslint/types" "5.50.0"
+    "@typescript-eslint/visitor-keys" "5.50.0"
     debug "^4.3.4"
     globby "^11.1.0"
     is-glob "^4.0.3"
@@ -3850,12 +3912,34 @@
     eslint-utils "^3.0.0"
     semver "^7.3.7"
 
+"@typescript-eslint/utils@5.50.0":
+  version "5.50.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/utils/-/utils-5.50.0.tgz#807105f5ffb860644d30d201eefad7017b020816"
+  integrity sha1-gHEF9f+4YGRNMNIB7vrXAXsCCBY=
+  dependencies:
+    "@types/json-schema" "^7.0.9"
+    "@types/semver" "^7.3.12"
+    "@typescript-eslint/scope-manager" "5.50.0"
+    "@typescript-eslint/types" "5.50.0"
+    "@typescript-eslint/typescript-estree" "5.50.0"
+    eslint-scope "^5.1.1"
+    eslint-utils "^3.0.0"
+    semver "^7.3.7"
+
 "@typescript-eslint/visitor-keys@5.49.0":
   version "5.49.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/visitor-keys/-/visitor-keys-5.49.0.tgz"
   integrity sha1-JWHE2j8jX1yFJ1m/bF+ux1JPkP4=
   dependencies:
     "@typescript-eslint/types" "5.49.0"
+    eslint-visitor-keys "^3.3.0"
+
+"@typescript-eslint/visitor-keys@5.50.0":
+  version "5.50.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@typescript-eslint/visitor-keys/-/visitor-keys-5.50.0.tgz#b752ffc143841f3d7bc57d6dd01ac5c40f8c4903"
+  integrity sha1-t1L/wUOEHz17xX1t0BrFxA+MSQM=
+  dependencies:
+    "@typescript-eslint/types" "5.50.0"
     eslint-visitor-keys "^3.3.0"
 
 "@webassemblyjs/ast@1.11.1":
@@ -6981,6 +7065,11 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
+eslint-config-prettier@^8.6.0:
+  version "8.6.0"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint-config-prettier/-/eslint-config-prettier-8.6.0.tgz#dec1d29ab728f4fa63061774e1672ac4e363d207"
+  integrity sha1-3sHSmrco9PpjBhd04WcqxONj0gc=
+
 eslint-config-react-app@^7.0.1:
   version "7.0.1"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint-config-react-app/-/eslint-config-react-app-7.0.1.tgz"
@@ -7080,9 +7169,9 @@ eslint-plugin-react-hooks@^4.3.0:
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz"
   integrity sha1-TD5petlbd+k/hkaqoWMMG6YH7dM=
 
-eslint-plugin-react@^7.27.1:
+eslint-plugin-react@^7.27.1, eslint-plugin-react@^7.32.2:
   version "7.32.2"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint-plugin-react/-/eslint-plugin-react-7.32.2.tgz"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint-plugin-react/-/eslint-plugin-react-7.32.2.tgz#e71f21c7c265ebce01bcbc9d0955170c55571f10"
   integrity sha1-5x8hx8Jl684BvLydCVUXDFVXHxA=
   dependencies:
     array-includes "^3.1.6"
@@ -7160,9 +7249,9 @@ eslint-webpack-plugin@^3.1.1:
     normalize-path "^3.0.0"
     schema-utils "^4.0.0"
 
-eslint@^8.3.0:
+eslint@^8.3.0, eslint@^8.33.0:
   version "8.33.0"
-  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint/-/eslint-8.33.0.tgz"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/eslint/-/eslint-8.33.0.tgz#02f110f32998cb598c6461f24f4d306e41ca33d7"
   integrity sha1-AvEQ8ymYy1mMZGHyT00wbkHKM9c=
   dependencies:
     "@eslint/eslintrc" "^1.4.1"
@@ -12517,6 +12606,11 @@ prelude-ls@~1.1.2:
   version "2.3.0"
   resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
   integrity sha1-tqW/EoQCauZA8X9/9WWKdWf8DRg=
+
+prettier@^2.8.3:
+  version "2.8.3"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/prettier/-/prettier-2.8.3.tgz#ab697b1d3dd46fb4626fbe2f543afe0cc98d8632"
+  integrity sha1-q2l7HT3Ub7Rib74vVDr+DMmNhjI=
 
 pretty-bytes@^5.3.0, pretty-bytes@^5.4.1:
   version "5.6.0"
