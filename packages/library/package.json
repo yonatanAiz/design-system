@@ -21,7 +21,7 @@
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
     "prettier:write": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "storyshoots":"yarn build-storybook && start-server-and-test start:build http://localhost:6006 test:storyshots"
+    "storyshoots": "yarn build-storybook && start-server-and-test start:build http://localhost:6006 test:storyshots"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

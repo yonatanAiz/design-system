@@ -24,7 +24,7 @@ module.exports = {
     'webpack.config.js',
     'jest.config.js',
     'jest.storyshots.config.js',
-    "storybook-static",
+    'storybook-static',
   ],
   plugins: ['react', '@typescript-eslint'],
   rules: {},
