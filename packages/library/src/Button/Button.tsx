@@ -21,7 +21,6 @@ const Button = ({
   return (
     <button
       {...props}
-      type={type}
       className={classnames(
         styles.button,
         className,
