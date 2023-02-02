@@ -14,6 +14,8 @@
     "build-storybook": "build-storybook",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:staged": "jest --bail --findRelatedTests",
+    "test:storyshots": "jest --testPathPattern storybook.spec.ts",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
     "prettier:write": "prettier --write .",

@@ -22,7 +22,12 @@ const Button = ({
     <button
       {...props}
       type={type}
-      className={classnames(className, styles[color], styles[variant])}
+      className={classnames(
+        styles.button,
+        className,
+        styles[color],
+        styles[variant],
+      )}
     >
       {icon}
       {children}

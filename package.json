@@ -8,10 +8,10 @@
     "react-test-renderer": "18.1.0"
   },
   "lint-staged": {
-    "packages/library/**/*.{ts,tsx,css}": [
-      "yarn workspace library jest --bail --findRelatedTests",
-      "eslint --ext .js,.jsx,.ts,.tsx . --fix",
-      "yarn workspace library prettier --write ."
+    "*.{ts,tsx,css}": [
+      "yarn workspace library test:staged",
+      "yarn workspace library lint:fix",
+      "yarn workspace library prettier:write"
     ]
   },
   "workspaces": [
