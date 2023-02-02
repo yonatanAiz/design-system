@@ -16,7 +16,7 @@
     "test:watch": "jest --watch",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
-    "prettier": "prettier --write .",
+    "prettier:write": "prettier --write .",
     "prettier:check": "prettier --check ."
   },
   "devDependencies": {

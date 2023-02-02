@@ -7,12 +7,24 @@
   "resolutions": {
     "react-test-renderer": "18.1.0"
   },
+  "lint-staged": {
+    "packages/library/**/*.{ts,tsx,css}": [
+      "yarn workspace library test",
+      "yarn workspace library lint:fix",
+      "yarn workspace library prettier:write"
+    ]
+  },
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
     "build:library": "yarn workspace library build",
     "start:website": "yarn workspace website start",
-    "storybook": "yarn workspace library storybook"
+    "storybook": "yarn workspace library storybook",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0"
   }
 }
