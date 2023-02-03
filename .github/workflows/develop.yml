@@ -5,23 +5,6 @@ on:
     branches:
       - develop
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install and Build 🔧
-        run: |
-          yarn install
-          yarn build:storybook
 
       # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -35,21 +18,32 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Build job
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
+
+      - name: Install and Build 🔧
+        run: |
+          yarn install
+          yarn build:storybook
 
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
           source: packages/library/storybook-static
           destination: ./docs
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
