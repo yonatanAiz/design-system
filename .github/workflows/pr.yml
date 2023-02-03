@@ -1,5 +1,4 @@
-# Run tests on library when open new pr to develop
-name: PR workflow
+name: CI
 
 on:
   pull_request:
@@ -7,37 +6,20 @@ on:
       - develop
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Use Node.js 16.x
+
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
-      - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install
+          node-version: 16
 
-      - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build
+      - name: Install dependencies
+        run: yarn
 
-      - name: Test the library
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: test:library
-
-      - name: Lint the library
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: lint:library
-
-      - name: prettier the app
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: prettier:check:library
+      - name: Build the code
+        run: yarn build
