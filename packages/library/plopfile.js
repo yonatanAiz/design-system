@@ -1,6 +1,7 @@
-import { NodePlopAPI } from 'plop';
-
-export default function plopGenerator(plop: NodePlopAPI) {
+export default function plopGenerator(
+  /** @type {import('plop').NodePlopAPI} */
+  plop,
+) {
   plop.setGenerator('component', {
     description: 'Create a component',
     prompts: [
@@ -21,7 +22,7 @@ export default function plopGenerator(plop: NodePlopAPI) {
         type: 'modify',
         path: 'src/components/index.ts',
         transform(template, data) {
-          const capitalize = (str: string) =>
+          const capitalize = (str) =>
             str.charAt(0).toUpperCase() + str.slice(1);
           return template + `export * from './${capitalize(data.name)}';\n`;
         },
