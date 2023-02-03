@@ -17,28 +17,19 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
-      - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install 
+      - uses: c-hive/gha-yarn-cache@v2
+
+      - name: Install
+        run: yarn install
 
       - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build
+        run: yarn build
 
       - name: Test the library
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: test:library
+        run: yarn test:library
 
       - name: Lint the library
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: lint:library
+        run: yarn lint:library
 
       - name: prettier the app
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: prettier:check:library
-          
+        run: yarn prettier:check:library
