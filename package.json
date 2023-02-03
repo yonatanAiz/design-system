@@ -18,8 +18,15 @@
   ],
   "scripts": {
     "build:library": "yarn workspace library build",
+    "build:storybook": "yarn workspace library build-storybook",
+    "build:website": "yarn workspace website build",
+    "build": "yarn build:library && yarn build:storybook",
     "start:website": "yarn workspace website start",
     "storybook": "yarn workspace library storybook",
+    "test:library": "yarn workspace library test",
+    "storyshoots:library:": "yarn workspace library storyshoots",
+    "lint:library": "yarn workspace library lint",
+    "prettier:check:library": "yarn workspace library prettier:check",
     "prepare": "husky install",
     "lint": "lint-staged"
   },
