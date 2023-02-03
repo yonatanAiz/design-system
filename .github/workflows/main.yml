@@ -16,10 +16,4 @@ jobs:
         with:
           node-version: 16.x
 
-       
-      - name: Run install
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: install 
-
       - name: Release new version
