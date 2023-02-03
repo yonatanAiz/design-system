@@ -5,7 +5,10 @@ on:
     branches:
       - develop
 
-      # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    paths:
+      ["packages/library/src/components/**", "packages/library/src/styles/**"]
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
@@ -41,12 +44,11 @@ jobs:
           yarn install
           yarn build:storybook
 
-      - name: Upload artifact
+      - name: Upload artifact 📁
         uses: actions/upload-pages-artifact@v1
         with:
-          # Upload entire repository
           path: "packages/library/storybook-static"
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages 🚀
         id: deployment
         uses: actions/deploy-pages@v1
