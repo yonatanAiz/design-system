@@ -5,7 +5,6 @@ on:
     branches:
       - develop
 
-
       # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -18,7 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -43,7 +42,7 @@ jobs:
         with:
           source: packages/library/storybook-static
           destination: ./docs
-          
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
