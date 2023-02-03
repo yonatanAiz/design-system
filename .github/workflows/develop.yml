@@ -19,3 +19,4 @@ jobs:
           node-version: 16
 
       - name: Deploy storybook static
+        run: echo "Deploy storybook static"

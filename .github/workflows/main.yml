@@ -18,3 +18,4 @@ jobs:
           node-version: 16
 
       - name: Release new version
+        run: echo "Release new version"
