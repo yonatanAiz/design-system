@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "exports": {
     ".": "./dist/index.js",
     "./styles": "./dist/main.css"
@@ -14,17 +13,17 @@
     "storybook": "start-storybook -p 6006",
     "start:build": "start-storybook -p 6006 -s ./storybook-static",
     "build-storybook": "build-storybook",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "jest --config test/jest.config.js",
+    "test:watch": "yarn test --watch",
     "test:staged": "jest --bail --findRelatedTests",
-    "test:storyshots": "jest --config jest.storyshots.config.js",
+    "test:storyshots": "jest --config test/jest.storyshots.config.js",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
     "prettier:write": "prettier --write .",
     "prettier:check": "prettier --check .",
     "storyshoots": "yarn build-storybook && start-server-and-test start:build http://localhost:6006 test:storyshots",
-    "plop": "plop",
-    "create:component": "plop component"
+    "plop": "plop --plopfile plop/plopfile.js",
+    "create:component": "yarn plop component"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

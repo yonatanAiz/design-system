@@ -24,10 +24,12 @@ module.exports = {
     'coverage',
     'webpack.config.js',
     'jest.config.js',
+    'jest.common.js',
     'jest.storyshots.config.js',
     'storybook-static',
     'plop-templates',
     '*.hbs',
+    "plopfile.js"
   ],
   settings: {
     react: {

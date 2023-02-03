@@ -1,4 +1,4 @@
-export default function plopGenerator(
+module.exports = function plopGenerator(
   /** @type {import('plop').NodePlopAPI} */
   plop,
 ) {
@@ -14,13 +14,13 @@ export default function plopGenerator(
     actions: [
       {
         type: 'addMany',
-        destination: 'src/components/{{name}}',
+        destination: '../src/components/{{name}}',
         base: 'plop-templates/component',
         templateFiles: 'plop-templates/component/*.hbs',
       },
       {
         type: 'modify',
-        path: 'src/components/index.ts',
+        path: '../src/components/index.ts',
         transform(template, data) {
           const capitalize = (str) =>
             str.charAt(0).toUpperCase() + str.slice(1);
