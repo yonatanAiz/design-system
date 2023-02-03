@@ -1,0 +1,17 @@
+import React from 'react';
+import styles from './{{ camelCase name }}.module.css';
+import classnames from 'classnames';
+
+export interface {{ pascalCase name }}Props {
+    className?: string;
+}
+
+const {{ pascalCase name }} = ({ className }: {{ pascalCase name }}Props) => {
+  return (
+    <div className={classnames(styles.{{ camelCase name }}, className)}>
+     {{ pascalCase name }}
+    </div>
+  );
+};
+
+export default {{ pascalCase name }};

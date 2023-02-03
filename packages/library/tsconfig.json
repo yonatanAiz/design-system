@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "module": "es6",
+    "module": "CommonJS",
     "target": "es5",
     "jsx": "react",
     "declaration": true,
@@ -15,7 +15,7 @@
     "removeComments": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["src/**/*", "jest.setup.ts", ".storybook/**/*"],
+  "include": ["src/**/*", "jest.setup.ts", ".storybook/**/*", "scripts/*"],
   "exclude": [
     "node_modules",
     "dist",

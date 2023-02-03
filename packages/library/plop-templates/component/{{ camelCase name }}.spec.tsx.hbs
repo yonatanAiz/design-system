@@ -1,0 +1,14 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+import {{ pascalCase name }}, { {{ pascalCase name }}Props } from './{{ pascalCase name }}';
+import { {{ camelCase name }}Driver } from './{{ camelCase name }}.testDriver';
+
+const render{{ pascalCase name }} = (props?: {{ pascalCase name }}Props) =>
+  render(<{{ pascalCase name }} {...props} />);
+
+describe('{{ pascalCase name }}', () => {
+  it('should render', () => {
+    render{{ pascalCase name }}();
+    expect({{ camelCase name }}Driver.get{{ pascalCase name }}()).toBeInTheDocument();
+  });
+});

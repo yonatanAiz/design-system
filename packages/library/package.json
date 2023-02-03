@@ -13,7 +13,7 @@
     "storybook": "start-storybook -p 6006",
     "start:build": "start-storybook -p 6006 -s ./storybook-static",
     "build-storybook": "build-storybook",
-    "test": "jest --ignore storybook.spec.ts",
+    "test": "jest",
     "test:watch": "jest --watch",
     "test:staged": "jest --bail --findRelatedTests",
     "test:storyshots": "jest --config jest.storyshots.config.js",
@@ -21,7 +21,9 @@
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix",
     "prettier:write": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "storyshoots": "yarn build-storybook && start-server-and-test start:build http://localhost:6006 test:storyshots"
+    "storyshoots": "yarn build-storybook && start-server-and-test start:build http://localhost:6006 test:storyshots",
+    "plop": "plop",
+    "create:component": "plop component"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -48,6 +50,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
+    "plop": "^3.1.1",
     "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -29,7 +29,7 @@ const Button = ({
         styles[variant],
       )}
     >
-      {icon}
+      {icon ? <span data-testid="button-icon-prefix">{icon}</span> : null}
       {children}
     </button>
   );

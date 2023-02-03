@@ -18,6 +18,7 @@ module.exports = {
   },
   ignorePatterns: [
     'node_modules',
+    '*.css',
     'dist',
     'build',
     'coverage',
@@ -25,7 +26,14 @@ module.exports = {
     'jest.config.js',
     'jest.storyshots.config.js',
     'storybook-static',
+    'plop-templates',
+    '*.hbs',
   ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   plugins: ['react', '@typescript-eslint'],
   rules: {},
 };
