@@ -19,7 +19,9 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: yarn install --network-timeout 100000
+        working-directory: ./packages/library
+        run: npm ci
 
       - name: Build the code
-        run: yarn build
+        working-directory: ./packages/library
+        run: npm run build
