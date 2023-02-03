@@ -19,9 +19,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        working-directory: ./packages/library
-        run: npm install
+        run: yarn install --frozen-lockfile --ignore-scripts --network-timeout 100000
 
       - name: Build the code
-        working-directory: ./packages/library
-        run: npm run build
+        run: yarn build
