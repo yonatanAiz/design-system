@@ -40,18 +40,28 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: Install and Build storybook 🔧
-        run: |
-          yarn install
-          yarn build:storybook
+      - name: Get changed files in the docs folder
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v35
+        with:
+          files: packages/library/src/**
+
+      - name: Install
+        run: yarn install
+
+      - name: Build storybook 🔧
+        run: yarn build:storybook
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
 
       - name: Upload artifact 📁
         uses: actions/upload-pages-artifact@v1
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
         with:
           path: "packages/library/storybook-static"
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
+        if: steps.changed-files-specific.outputs.any_changed == 'true'
         uses: actions/deploy-pages@v1
 
       - uses: google-github-actions/release-please-action@v3
@@ -60,12 +70,12 @@ jobs:
           package-name: "@yoniaiz/design-system"
           command: manifest
 
-        if: ${{ steps.release.outputs.release_created }}
       - name: Build library
         run: yarn build:library
-
         if: ${{ steps.release.outputs.release_created }}
+
       - name: Publish package on NPM 📦
         run: yarn workspace @yoniaiz/library publish --access=public
+        if: ${{ steps.release.outputs.release_created }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
