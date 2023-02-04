@@ -40,12 +40,18 @@ jobs:
       - name: Build the code
         run: yarn build
 
-      - name: Bump Library Version
+      - name: git auth
         run: |
           git config --global user.email ${{ env.EMAIL }}
           git config --global user.name ${{ env.NAME }}
-          yarn workspace library version --new-version ${{ github.event.inputs.version_bump }}
-          git push origin HEAD --tags
+
+      - name: "Automated Version Bump"
+        uses: "phips28/gh-action-bump-version@master"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PACKAGEJSON_DIR: packages/library
+        with:
+          version-type: ${{ github.event.inputs.version_bump }}
 
       - name: Publish package on NPM 📦
         run: yarn workspace library publish
