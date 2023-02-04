@@ -45,9 +45,15 @@ jobs:
           git config --global user.email ${{ env.EMAIL }}
           git config --global user.name ${{ env.NAME }}
 
-      - name: Release
-        uses: cycjimmy/semantic-release-action@v3
+      - name: "Automated Version Bump"
+        uses: "phips28/gh-action-bump-version@master"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          token: ${{ secrets.TOKEN }}
+          PACKAGEJSON_DIR: packages/library
+        with:
+          version-type: ${{ github.event.inputs.version_bump }}
+
+      - name: Publish package on NPM 📦
+        run: yarn workspace @yoniaiz/library publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
