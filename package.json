@@ -10,6 +10,10 @@
       "yarn workspace library prettier:write"
     ]
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yonatanAiz/design-system.git"
+  },
   "workspaces": [
     "packages/*"
   ],

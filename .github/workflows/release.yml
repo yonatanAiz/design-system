@@ -29,6 +29,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.TOKEN }}
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: "https://registry.npmjs.org"
+
       - name: Install dependencies
         run: yarn install
 
@@ -43,6 +48,6 @@ jobs:
           git push origin HEAD --tags
 
       - name: Publish package on NPM 📦
-        run: npm publish
+        run: yarn workspace library publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
