@@ -29,26 +29,18 @@ jobs:
             exit 1
           fi
 
-      - name: Bump version
+      - name: Bump Library Version
         run: |
-          version=$(npm version $bump)
-          echo "Bumped version to $version"
+          yarn version --new-version ${{ env.version }}
+          git push origin HEAD --tags
 
-      - name: Commit and push
-        run: |
-          git config --global user.email "github-actions@example.com"
-          git config --global user.name "Github Actions"
-          git add package.json
-          git commit -m "Bump version to $version"
-          git push origin HEAD:main
-
-      - name: Create release
+      - name: Create Release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v$version
-          release_name: Release $version
+          tag_name: ${{ env.version }}
+          release_name: "Release New Version"
           draft: false
           prerelease: false
 
