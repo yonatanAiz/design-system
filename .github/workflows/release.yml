@@ -29,8 +29,7 @@ jobs:
 
       - name: Bump Library Version
         run: |
-          echo $VERSION_BUMP
-          yarn version --new-version $VERSION_BUMP
+          yarn workspace library version --new-version $VERSION_BUMP
           git push origin HEAD --tags
 
       - name: Create Release
