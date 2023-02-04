@@ -23,6 +23,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
 
       - name: Bump Library Version
         run: |
