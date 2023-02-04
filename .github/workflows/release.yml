@@ -46,8 +46,8 @@ jobs:
           git config --global user.name ${{ env.NAME }}
 
       - name: Release
+        uses: cycjimmy/semantic-release-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          token: ${{ secrets.TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release
+          token: ${{ secrets.TOKEN }}
