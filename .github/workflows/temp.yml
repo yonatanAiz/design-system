@@ -1,0 +1,28 @@
+name: Temp
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.TOKEN }}
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: "https://registry.npmjs.org"
+
+      - name: test
+        run: echo ${{ secrets.TOKEN }}
+        
+      - name: test2
+        run: echo ${{ secrets.NPM_TOKEN }}
+      
