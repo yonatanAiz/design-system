@@ -18,6 +18,10 @@ jobs:
   release:
     runs-on: ubuntu-latest
 
+    env:
+      EMAIL: yoni29396@gmail.com
+      NAME: yonatanAiz
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -27,8 +31,8 @@ jobs:
 
       - name: Bump Library Version
         run: |
-          git config --global user.email "${{ env.EMAIL }}"
-          git config --global user.name "${{ env.NAME }}"
+          git config --global user.email ${{ env.EMAIL }}
+          git config --global user.name ${{ env.NAME }}
           yarn workspace library version --new-version ${{ github.event.inputs.version_bump }}
           git push origin HEAD --tags
 
