@@ -13,7 +13,6 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.TOKEN }}
-          token: ${{ secrets.TOKEN }}
 
       - uses: actions/setup-node@v3
         with:
