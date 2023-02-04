@@ -6,7 +6,10 @@ on:
       - main
 
     paths:
-      ["packages/library/src/components/**", "packages/library/src/style/**"]
+      [
+        "packages/@yoniaiz/library/src/components/**",
+        "packages/@yoniaiz/library/src/style/**",
+      ]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -47,7 +50,7 @@ jobs:
       - name: Upload artifact 📁
         uses: actions/upload-pages-artifact@v1
         with:
-          path: "packages/library/storybook-static"
+          path: "packages/@yoniaiz/library/storybook-static"
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment

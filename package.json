@@ -6,8 +6,8 @@
   "private": true,
   "lint-staged": {
     "*.{ts,tsx,css}": [
-      "yarn workspace library lint:fix",
-      "yarn workspace library prettier:write"
+      "yarn workspace @yoniaiz/library lint:fix",
+      "yarn workspace @yoniaiz/library prettier:write"
     ]
   },
   "repository": {
@@ -18,16 +18,16 @@
     "packages/*"
   ],
   "scripts": {
-    "build:library": "yarn workspace library build",
-    "build:storybook": "yarn workspace library build-storybook",
+    "build:@yoniaiz/library": "yarn workspace @yoniaiz/library build",
+    "build:storybook": "yarn workspace @yoniaiz/library build-storybook",
     "build:website": "yarn workspace website build",
-    "build": "yarn build:library && yarn build:storybook",
+    "build": "yarn build:@yoniaiz/library && yarn build:storybook",
     "start:website": "yarn workspace website start",
-    "storybook": "yarn workspace library storybook",
-    "test:library": "yarn workspace library test",
-    "storyshoots:library": "yarn workspace library storyshoots",
-    "lint:library": "yarn workspace library lint",
-    "prettier:check:library": "yarn workspace library prettier:check",
+    "storybook": "yarn workspace @yoniaiz/library storybook",
+    "test:@yoniaiz/library": "yarn workspace @yoniaiz/library test",
+    "storyshoots:@yoniaiz/library": "yarn workspace @yoniaiz/library storyshoots",
+    "lint:@yoniaiz/library": "yarn workspace @yoniaiz/library lint",
+    "prettier:check:@yoniaiz/library": "yarn workspace @yoniaiz/library prettier:check",
     "prepare": "husky install",
     "lint": "lint-staged"
   },

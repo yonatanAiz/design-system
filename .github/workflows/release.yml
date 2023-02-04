@@ -49,11 +49,11 @@ jobs:
         uses: "phips28/gh-action-bump-version@master"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGEJSON_DIR: packages/library
+          PACKAGEJSON_DIR: packages/@yoniaiz/library
         with:
           version-type: ${{ github.event.inputs.version_bump }}
 
       - name: Publish package on NPM 📦
-        run: yarn workspace library publish
+        run: yarn workspace @yoniaiz/library publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

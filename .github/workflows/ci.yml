@@ -25,10 +25,10 @@ jobs:
         run: yarn build
 
       - name: Test the code
-        run: yarn test:library
+        run: yarn test:@yoniaiz/library
 
       - name: Lint the code
-        run: yarn lint:library
+        run: yarn lint:@yoniaiz/library
 
       - name: prettier the code
-        run: yarn prettier:check:library
+        run: yarn prettier:check:@yoniaiz/library
