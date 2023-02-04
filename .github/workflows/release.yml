@@ -29,6 +29,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.TOKEN }}
 
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build the code
+        run: yarn build
+
       - name: Bump Library Version
         run: |
           git config --global user.email ${{ env.EMAIL }}
@@ -36,12 +42,7 @@ jobs:
           yarn workspace library version --new-version ${{ github.event.inputs.version_bump }}
           git push origin HEAD --tags
 
-      - name: Create Release
-        uses: actions/create-release@v1
+      - name: Publish package on NPM 📦
+        run: npm publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
