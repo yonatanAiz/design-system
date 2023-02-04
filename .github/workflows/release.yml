@@ -49,7 +49,7 @@ jobs:
         uses: "phips28/gh-action-bump-version@master"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGEJSON_DIR: packages/@yoniaiz/library
+          PACKAGEJSON_DIR: packages/library
         with:
           version-type: ${{ github.event.inputs.version_bump }}
 
