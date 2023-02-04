@@ -39,7 +39,7 @@ jobs:
 
       - name: Bump Library Version
         run: |
-          yarn version --new-version ${{ env.version }}
+          yarn version --new-version $bump
           git push origin HEAD --tags
 
       - name: Create Release
@@ -50,4 +50,4 @@ jobs:
           tag_name: ${{ env.version }}
           release_name: "Release New Version"
           draft: false
-          prerelease: false
+          prerelease: fals
