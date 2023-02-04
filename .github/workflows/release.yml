@@ -54,6 +54,6 @@ jobs:
           version-type: ${{ github.event.inputs.version_bump }}
 
       - name: Publish package on NPM 📦
-        run: yarn workspace @yoniaiz/library publish
+        run: yarn workspace @yoniaiz/library publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
