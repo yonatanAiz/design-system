@@ -1,12 +1,8 @@
 {
   "name": "@yoniaiz/library",
   "version": "1.0.8",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js",
-    "./styles": "./dist/main.css"
-  },
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode production",

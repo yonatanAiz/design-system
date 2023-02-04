@@ -3,12 +3,14 @@ const nodeExternals = require('webpack-node-externals');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: {
+    main: './src/index.ts',
+    drivers: './src/drivers.ts',
+  },
   externals: [nodeExternals()],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js',
-    library: 'design-system',
+    filename: '[name].js',
     libraryTarget: 'umd',
   },
   plugins: [new MiniCssExtractPlugin()],
