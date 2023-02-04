@@ -3,7 +3,7 @@ name: Develop workflow
 on:
   push:
     branches:
-      - develop
+      - main
 
     paths:
       ["packages/library/src/components/**", "packages/library/src/style/**"]
@@ -20,7 +20,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build-and-deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

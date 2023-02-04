@@ -1,0 +1,62 @@
+name: Release Library
+
+on:
+  workflow_dispatch:
+    branches:
+      - main
+
+env:
+  VERSION_BUMP: ${{ inputs.version_bump }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set version bump
+        run: |
+          if [ "$VERSION_BUMP" == "patch" ]; then
+            bump=patch
+          elif [ "$VERSION_BUMP" == "minor" ]; then
+            bump=minor
+          elif [ "$VERSION_BUMP" == "major" ]; then
+            bump=major
+          else
+            echo "Invalid version bump option."
+            exit 1
+          fi
+
+      - name: Bump version
+        run: |
+          version=$(npm version $bump)
+          echo "Bumped version to $version"
+
+      - name: Commit and push
+        run: |
+          git config --global user.email "github-actions@example.com"
+          git config --global user.name "Github Actions"
+          git add package.json
+          git commit -m "Bump version to $version"
+          git push origin HEAD:main
+
+      - name: Create release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v$version
+          release_name: Release $version
+          draft: false
+          prerelease: false
+
+inputs:
+  version_bump:
+    description: "Version bump type (patch, minor, major)"
+    required: true
+    options:
+      - patch
+      - minor
+      - major
