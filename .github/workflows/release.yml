@@ -6,8 +6,11 @@ on:
       - main
 jobs:
   release:
+    if: |
+      COMMIT_MESSAGE="$(git log -1 --pretty=%B)"
+      CHECK=$(echo $COMMIT_MESSAGE | grep "release library")
+      [ -z $CHECK ] && false || true
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
