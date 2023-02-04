@@ -4,6 +4,14 @@ on:
   workflow_dispatch:
     branches:
       - main
+    inputs:
+      version_bump:
+        description: "Version bump type (patch, minor, major)"
+        required: true
+        options:
+          - patch
+          - minor
+          - major
 
 env:
   VERSION_BUMP: ${{ inputs.version_bump }}
@@ -43,12 +51,3 @@ jobs:
           release_name: "Release New Version"
           draft: false
           prerelease: false
-
-inputs:
-  version_bump:
-    description: "Version bump type (patch, minor, major)"
-    required: true
-    options:
-      - patch
-      - minor
-      - major
