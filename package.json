@@ -26,7 +26,7 @@
     "build:library": "yarn workspace @yoniaiz/library build",
     "build:storybook": "yarn workspace @yoniaiz/library build-storybook",
     "build:website": "yarn workspace website build",
-    "build": "yarn build:@yoniaiz/library && yarn build:storybook",
+    "build": "yarn build:library && yarn build:storybook",
     "start:website": "yarn workspace website start",
     "storybook": "yarn workspace @yoniaiz/library storybook",
     "test:library": "yarn workspace @yoniaiz/library test",
