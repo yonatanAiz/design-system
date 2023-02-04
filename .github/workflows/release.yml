@@ -30,16 +30,7 @@ jobs:
           git config --global user.email "{{ env.EMAIL }}"
           git config --global user.name "{{ env.NAME }}"
           yarn workspace library version --new-version ${{ github.event.inputs.version_bump }}
-
-      - name: Push Changes
-        uses: actions/git-client@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          ref: main
-          push: true
-          force-with-lease: true
-          tags: false
+          git push origin HEAD --tags
 
       - name: Create Release
         uses: actions/create-release@v1
