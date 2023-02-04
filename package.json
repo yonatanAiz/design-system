@@ -4,6 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "private": true,
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
   "lint-staged": {
     "*.{ts,tsx,css}": [
       "yarn workspace @yoniaiz/library lint:fix",
@@ -33,6 +38,8 @@
   },
   "devDependencies": {
     "husky": "^8.0.3",
-    "lint-staged": "^13.1.0"
+    "lint-staged": "^13.1.0",
+    "semantic-release": "^20.1.0",
+    "semantic-release-monorepo": "^7.0.5"
   }
 }
