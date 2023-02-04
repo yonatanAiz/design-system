@@ -6,22 +6,14 @@ on:
       - main
 jobs:
   release:
-    if: |
-      COMMIT_MESSAGE="$(git log -1 --pretty=%B)"
-      CHECK=$(echo $COMMIT_MESSAGE | grep "release library")
-      [ -z $CHECK ] && false || true
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           token: ${{ secrets.TOKEN }}
-
-      - name: Get Commit Message
-        run: |
-          COMMIT_MESSAGE="$(git log -1 --pretty=%B)"
-          echo "Commit message: $COMMIT_MESSAGE"
 
       - name: Check for Release Library
         if: |
@@ -32,18 +24,18 @@ jobs:
           fi
         run: echo "Commit message contains 'release library'"
 
-      # - uses: actions/setup-node@v3
-      #   with:
-      #     node-version: 18
-      #     registry-url: "https://registry.npmjs.org"
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: "https://registry.npmjs.org"
 
-      # - name: Install dependencies
-      #   run: yarn install
+      - name: Install dependencies
+        run: yarn install
 
-      # - name: Build the code
-      #   run: yarn build:library
+      - name: Build the code
+        run: yarn build:library
 
-      # - name: Publish package on NPM 📦
-      #   run: yarn workspace @yoniaiz/library publish --access=public
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish package on NPM 📦
+        run: yarn workspace @yoniaiz/library publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

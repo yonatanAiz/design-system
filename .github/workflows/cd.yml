@@ -29,16 +29,18 @@ jobs:
         uses: actions/checkout@v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          registry-url: "https://registry.npmjs.org"
 
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: Install and Build 🔧
+      - name: Install and Build storybook 🔧
         run: |
           yarn install
           yarn build:storybook
@@ -57,3 +59,13 @@ jobs:
           release-type: node
           package-name: "@yoniaiz/design-system"
           command: manifest
+
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Build library
+        run: yarn build:library
+
+        if: ${{ steps.release.outputs.release_created }}
+      - name: Publish package on NPM 📦
+        run: yarn workspace @yoniaiz/library publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
