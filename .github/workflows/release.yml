@@ -29,15 +29,25 @@ jobs:
 
       - name: Bump Library Version
         run: |
-          yarn workspace library version --new-version $VERSION_BUMP
-          git push origin HEAD --tags
+          - name: Set version bump
+          if [ "$VERSION_BUMP" == "patch" ]; then
+            bump=patch
+          elif [ "$VERSION_BUMP" == "minor" ]; then
+            bump=minor
+          elif [ "$VERSION_BUMP" == "major" ]; then
+            bump=major
+          else
+            echo "Invalid version bump option."
+            exit 1
+          fi
+      #     git push origin HEAD --tags
 
-      - name: Create Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ env.version }}
-          release_name: "Release New Version"
-          draft: false
-          prerelease: fals
+      # - name: Create Release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     tag_name: ${{ env.version }}
+      #     release_name: "Release New Version"
+      #     draft: false
+      #     prerelease: false
