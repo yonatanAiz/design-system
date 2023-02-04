@@ -1,5 +1,5 @@
 import { Button } from "@yoniaiz/library";
-import "@yoniaiz/library/styles";
+import "@yoniaiz/library/dist/main.css";
 import "./App.css";
 
 function App() {
