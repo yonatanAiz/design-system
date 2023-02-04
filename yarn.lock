@@ -4225,7 +4225,7 @@
 
 "@yoniaiz/library@*", "@yoniaiz/library@file:/home/runner/work/design-system/design-system/packages/library":
   "resolved" "file:packages/library"
-  "version" "1.0.7"
+  "version" "1.0.8"
   dependencies:
     "@storybook/addon-storyshots-puppeteer" "^6.5.16"
     "classnames" "^2.3.2"
