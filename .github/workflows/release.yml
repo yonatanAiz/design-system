@@ -8,13 +8,11 @@ on:
       version_bump:
         description: "Version bump type (patch, minor, major)"
         required: true
+        type: choice
         options:
           - patch
           - minor
           - major
-
-env:
-  VERSION_BUMP: ${{ inputs.version_bump }}
 
 jobs:
   release:
@@ -23,6 +21,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - run: |
+          echo "Log level: $LEVEL"
+        env:
+          VERSION_BUMP: ${{ inputs.version_bump }}
 
       - name: Set version bump
         run: |
@@ -39,8 +42,8 @@ jobs:
 
       - name: Bump Library Version
         run: |
-          echo $bump
-          yarn version --new-version ($bump)
+          echo $VERSION_BUMP
+          yarn version --new-version VERSION_BUMP
           git push origin HEAD --tags
 
       - name: Create Release
