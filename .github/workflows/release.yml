@@ -27,23 +27,10 @@ jobs:
         env:
           VERSION_BUMP: ${{ inputs.version_bump }}
 
-      - name: Set version bump
-        run: |
-          if [ "$VERSION_BUMP" == "patch" ]; then
-            bump=patch
-          elif [ "$VERSION_BUMP" == "minor" ]; then
-            bump=minor
-          elif [ "$VERSION_BUMP" == "major" ]; then
-            bump=major
-          else
-            echo "Invalid version bump option."
-            exit 1
-          fi
-
       - name: Bump Library Version
         run: |
           echo $VERSION_BUMP
-          yarn version --new-version VERSION_BUMP
+          yarn version --new-version $VERSION_BUMP
           git push origin HEAD --tags
 
       - name: Create Release
