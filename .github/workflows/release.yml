@@ -38,7 +38,7 @@ jobs:
         run: yarn install
 
       - name: Build the code
-        run: yarn build
+        run: yarn build:library
 
       - name: git auth
         run: |

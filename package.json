@@ -18,16 +18,16 @@
     "packages/*"
   ],
   "scripts": {
-    "build:@yoniaiz/library": "yarn workspace @yoniaiz/library build",
+    "build:library": "yarn workspace @yoniaiz/library build",
     "build:storybook": "yarn workspace @yoniaiz/library build-storybook",
     "build:website": "yarn workspace website build",
     "build": "yarn build:@yoniaiz/library && yarn build:storybook",
     "start:website": "yarn workspace website start",
     "storybook": "yarn workspace @yoniaiz/library storybook",
-    "test:@yoniaiz/library": "yarn workspace @yoniaiz/library test",
-    "storyshoots:@yoniaiz/library": "yarn workspace @yoniaiz/library storyshoots",
-    "lint:@yoniaiz/library": "yarn workspace @yoniaiz/library lint",
-    "prettier:check:@yoniaiz/library": "yarn workspace @yoniaiz/library prettier:check",
+    "test:library": "yarn workspace @yoniaiz/library test",
+    "storyshoots:library": "yarn workspace @yoniaiz/library storyshoots",
+    "lint:library": "yarn workspace @yoniaiz/library lint",
+    "prettier:check:library": "yarn workspace @yoniaiz/library prettier:check",
     "prepare": "husky install",
     "lint": "lint-staged"
   },
