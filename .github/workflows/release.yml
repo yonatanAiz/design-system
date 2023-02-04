@@ -27,8 +27,8 @@ jobs:
 
       - name: Bump Library Version
         run: |
-          git config --global user.email "{{ env.EMAIL }}"
-          git config --global user.name "{{ env.NAME }}"
+          git config --global user.email "${{ env.EMAIL }}"
+          git config --global user.name "${{ env.NAME }}"
           yarn workspace library version --new-version ${{ github.event.inputs.version_bump }}
           git push origin HEAD --tags
 
