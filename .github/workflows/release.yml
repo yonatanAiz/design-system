@@ -27,6 +27,9 @@ jobs:
         env:
           VERSION_BUMP: ${{ inputs.version_bump }}
 
+      - name: echo
+        run: echo "$VERSION_BUMP"
+
       - name: Bump Library Version
         run: |
           - name: Set version bump
