@@ -34,7 +34,8 @@
     "lint:library": "yarn workspace @yoniaiz/library lint",
     "prettier:check:library": "yarn workspace @yoniaiz/library prettier:check",
     "prepare": "husky install",
-    "lint": "lint-staged"
+    "lint": "lint-staged",
+    "semantic-release": "yarn workspaces run semantic-release -e semantic-release-monorepo"
   },
   "devDependencies": {
     "husky": "^8.0.3",

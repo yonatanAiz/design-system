@@ -31,7 +31,7 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
           registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
@@ -45,15 +45,9 @@ jobs:
           git config --global user.email ${{ env.EMAIL }}
           git config --global user.name ${{ env.NAME }}
 
-      - name: "Automated Version Bump"
-        uses: "phips28/gh-action-bump-version@master"
+      - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PACKAGEJSON_DIR: packages/library
-        with:
-          version-type: ${{ github.event.inputs.version_bump }}
-
-      - name: Publish package on NPM 📦
-        run: yarn workspace @yoniaiz/library publish --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          token: ${{ secrets.TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn semantic-release
