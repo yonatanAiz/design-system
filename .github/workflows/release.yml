@@ -23,7 +23,7 @@ jobs:
         uses: actions/checkout@v3
 
       - run: |
-          echo "Log level: $LEVEL"
+          echo "version bump: $VERSION_BUMP"
         env:
           VERSION_BUMP: ${{ inputs.version_bump }}
 
