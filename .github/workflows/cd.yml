@@ -45,7 +45,7 @@ jobs:
         id: changed-files-specific
         uses: tj-actions/changed-files@v35
         with:
-          files: packages/library/src/**
+          files: packages/library/src/**/*
 
       - name: Publish package on NPM 📦
         run: yarn workspace @yoniaiz/library publish --access=public
