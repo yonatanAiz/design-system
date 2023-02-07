@@ -5,12 +5,7 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  deployments: write
-  id-token: write
-  pages: write
-  pull-requests: write
+permissions: write-all
 
 # Allow one concurrent deployment
 concurrency:
