@@ -25,8 +25,8 @@ const Button = ({
       className={classnames(
         styles.button,
         className,
-        styles[variant],
         styles[color],
+        styles[variant],
       )}
     >
       {icon ? <span data-testid="button-icon-prefix">{icon}</span> : null}
