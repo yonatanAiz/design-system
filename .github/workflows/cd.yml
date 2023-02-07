@@ -49,12 +49,6 @@ jobs:
         with:
           files: packages/library/src/**/*
 
-      - name: Publish package on NPM 📦
-        run: yarn workspace @yoniaiz/library publish --access=public
-        if: ${{ steps.release.outputs.release_created }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Install
         if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: yarn install
@@ -77,3 +71,9 @@ jobs:
       - name: Build library
         run: yarn build:library
         if: ${{ steps.release.outputs.release_created }}
+
+      - name: Publish package on NPM 📦
+        run: yarn workspace @yoniaiz/library publish --access=public
+        if: ${{ steps.release.outputs.release_created }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
