@@ -41,7 +41,7 @@ jobs:
           echo ${{ steps.release.outputs.release_created }}
           echo ${{ steps.release.outputs['packages/library--release_created'] }}
           echo ${{ steps.release.outputs['packages/library--release_created'] }}
-          echo "Release ${{ steps.release.outputs['packages/package-a--tag_name'] }} created for package-a."
+          echo "Release ${{ steps.release.outputs['packages/packages/library--tag_name'] }} created for package-a."
 
       - name: Please Release
         uses: google-github-actions/release-please-action@v3
@@ -81,10 +81,10 @@ jobs:
 
       - name: Build library
         run: yarn build:library
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/library--release_created'] }}
 
       - name: Publish package on NPM 📦
         run: yarn workspace @yoniaiz/library publish --access=public
-        if: ${{ steps.release.outputs.release_created }}
+        if: ${{ steps.release.outputs['packages/library--release_created'] }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
