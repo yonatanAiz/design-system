@@ -4,3 +4,4 @@ storybook-static
 *.js
 plop-templates
 *.hbs
+CHANGELOG.md
