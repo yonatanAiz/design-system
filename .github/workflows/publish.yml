@@ -1,0 +1,39 @@
+name: Release PR and publish workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions: write-all
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Release please PR
+        uses: google-github-actions/release-please-action@v3
+        with:
+          monorepo-tags: true
+          command: manifest
+
+      - name: If release created install build
+        if: steps.release.outputs.release_created == 'true'
+        run: |
+          yarn install
+          yarn build:library
+
+      - name: Publish
+        if: steps.release.outputs.release_created == 'true'
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          tag: ${{ steps.release.outputs['packages/library--tag_name'] }}
+          directory: packages/library
