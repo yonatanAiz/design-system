@@ -36,14 +36,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
-      - name: test
-        run: |
-          echo ${{ steps.release.outputs.release_created }}
-          echo ${{ steps.release.outputs['packages/library--release_created'] }}
-          echo ${{ steps.release.outputs['packages/library--release_created'] }}
-          echo ${{ steps.release.outputs }}
-          echo "Release ${{ steps.release.outputs['packages/library--tag_name'] }} created for library."
-
       - name: Please Release
         uses: google-github-actions/release-please-action@v3
         with:
@@ -53,7 +45,14 @@ jobs:
           release-labels: |
             autorelease: tagged
             autorelease: published
-        if: ${{ steps.release.outputs.release_created }} == false
+
+      - name: test
+        run: |
+          echo ${{ steps.release.outputs.release_created }}
+          echo ${{ steps.release.outputs['packages/library--release_created'] }}
+          echo ${{ steps.release.outputs['packages/library--release_created'] }}
+          echo ${{ steps.release.outputs }}
+          echo "Release ${{ steps.release.outputs['packages/library--tag_name'] }} created for library."
 
       - name: Get changed files in the docs folder
         id: changed-files-specific
