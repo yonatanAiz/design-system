@@ -28,9 +28,7 @@
     "storyshoots": "yarn build-storybook && start-server-and-test start:build http://localhost:6006 test:storyshots",
     "plop": "plop --plopfile plop/plopfile.js",
     "create:component": "yarn plop component",
-    "release": "release-it",
-    "release:dry": "release-it --dry-run",
-    "w": "release-it  --dry-run --npm.publishArgs=\"--registry=https://registry.npmjs.org\""
+    "release": "release-it  --ci --npm.publishArgs=\"--registry=https://registry.npmjs.org\""
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
