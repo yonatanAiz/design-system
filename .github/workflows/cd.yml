@@ -41,7 +41,8 @@ jobs:
           echo ${{ steps.release.outputs.release_created }}
           echo ${{ steps.release.outputs['packages/library--release_created'] }}
           echo ${{ steps.release.outputs['packages/library--release_created'] }}
-          echo "Release ${{ steps.release.outputs['packages/packages/library--tag_name'] }} created for package-a."
+          echo ${{ steps.release.outputs }}
+          echo "Release ${{ steps.release.outputs['packages/library--tag_name'] }} created for library."
 
       - name: Please Release
         uses: google-github-actions/release-please-action@v3
