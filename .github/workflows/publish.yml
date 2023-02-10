@@ -8,11 +8,6 @@ on:
 
 permissions: write-all
 
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
   release:
     runs-on: ubuntu-latest

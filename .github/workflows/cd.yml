@@ -1,9 +1,12 @@
-name: Develop workflow
+name: CD workflow
 
 on:
   push:
     branches:
       - main
+
+    paths:
+      ["packages/library/src/components/**", "packages/library/src/style/**"]
 
 permissions: write-all
 
@@ -42,29 +45,19 @@ jobs:
       #     monorepo-tags: true
       #     command: manifest
 
-      - name: Get changed files in the docs folder
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v35
-        with:
-          files: packages/library/src/**/*
-
       - name: Install
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
         run: yarn install
 
       - name: Build storybook 🔧
         run: yarn build:storybook
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
 
       - name: Upload artifact 📁
         uses: actions/upload-pages-artifact@v1
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
         with:
           path: "packages/library/storybook-static"
 
       - name: Deploy to GitHub Pages 🚀
         id: deployment
-        if: steps.changed-files-specific.outputs.any_changed == 'true'
         uses: actions/deploy-pages@v1
 
       # - name: Build library
