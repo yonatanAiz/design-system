@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.1](https://github.com/yonatanAiz/design-system/compare/library-v1.3.0...library-v1.3.1) (2023-02-10)
+
+
+### Bug Fixes
+
+* button ([725c6de](https://github.com/yonatanAiz/design-system/commit/725c6dee25db2cf846b337082c31bd3fc0bc237a))
+* button ([0e2b2f4](https://github.com/yonatanAiz/design-system/commit/0e2b2f4b81c982741b9b22979cf01298861fd6bb))
+
 ## [1.3.0](https://github.com/yonatanAiz/design-system/compare/library-v1.2.0...library-v1.3.0) (2023-02-08)
 
 
