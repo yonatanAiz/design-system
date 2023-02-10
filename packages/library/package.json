@@ -27,12 +27,10 @@
     "prettier:check": "prettier --check .",
     "storyshoots": "yarn build-storybook && start-server-and-test start:build http://localhost:6006 test:storyshots",
     "plop": "plop --plopfile plop/plopfile.js",
-    "create:component": "yarn plop component",
-    "release": "release-it  --ci --npm.publishArgs=\"--registry=https://registry.npmjs.org\""
+    "create:component": "yarn plop component"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@release-it/conventional-changelog": "^5.1.1",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-interactions": "^6.5.16",
@@ -60,7 +58,6 @@
     "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "release-it": "^15.6.0",
     "start-server-and-test": "^1.15.3",
     "style-loader": "^3.3.1",
     "ts-jest": "^29.0.5",

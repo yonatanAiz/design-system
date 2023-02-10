@@ -40,11 +40,9 @@ jobs:
         uses: google-github-actions/release-please-action@v3
         with:
           release-type: node
+          monorepo-tags: true
           package-name: "@yoniaiz/design-system"
           command: manifest
-          release-labels: |
-            autorelease: tagged
-            autorelease: published
 
       - name: test
         run: |
@@ -81,10 +79,10 @@ jobs:
 
       - name: Build library
         run: yarn build:library
-        if: ${{ steps.release.outputs['packages/library--release_created'] }}
+        if: ${{ steps.release.outputs.releases_created }}
 
       - name: Publish package on NPM 📦
         run: yarn workspace @yoniaiz/library publish --access=public
-        if: ${{ steps.release.outputs['packages/library--release_created'] }}
+        if: ${{ steps.release.outputs.releases_created }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
