@@ -41,6 +41,7 @@ jobs:
         with:
           release-type: node
           monorepo-tags: true
+          path: packages/library
           package-name: "@yoniaiz/design-system"
           command: manifest
 
